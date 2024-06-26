@@ -207,8 +207,11 @@ class Single_mutation(tk.Frame,Genlig):
         w, h = self.master.maxsize()
         self.master.geometry("%dx%d" %(w-10, h-10))
         #self.master.geometry("800x600")
+<<<<<<< HEAD
         # self.output_images = []
         self.output_labels = []
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
 
         hidden_size_lfs = 450
         hidden_size_ss = 56
@@ -242,7 +245,10 @@ class Single_mutation(tk.Frame,Genlig):
         self.singlemuta_frame = tk.Frame(self.master, pady=10, relief="sunken", borderwidth=2)
         self.singlemuta_frame.pack(side='left', padx=100)
         title_label = tk.Label(self.singlemuta_frame, text="Input", font="Helvetica 18 bold", padx=10)
+<<<<<<< HEAD
         title_label = tk.Label(self.singlemuta_frame, text="The input is xyz file", font="Helvetica 18 bold", padx=10)
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
         title_label.pack(side="top", anchor="w")
         self.create_widgets()
         self.title = tk.Label(self.singlemuta_frame, text="Metal Oxidation", font="Helvetica 18 bold")
@@ -280,6 +286,7 @@ class Single_mutation(tk.Frame,Genlig):
         self.get_button.pack(side=tk.RIGHT, padx=6)
 
         # Frame4
+<<<<<<< HEAD
         self.path_frame = tk.Frame(self.singlemuta_frame, pady=10)
         self.path_frame.pack()
         self.title = tk.Label(self.path_frame, text="提供要儲存結果的路徑", font="none 18 bold")
@@ -290,23 +297,34 @@ class Single_mutation(tk.Frame,Genlig):
         self.get_path.pack()
 
         # Frame5
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
         self.start_frame = tk.Frame(self.singlemuta_frame, pady=20)
         self.start_frame.pack()
         self.get_button = tk.Button(self.start_frame, text="Start", command=self.Single_mutation)
         self.get_button.pack()
         self.output_label_sec = tk.Label(self.start_frame, text="")
         self.output_label_sec.pack()
+<<<<<<< HEAD
         
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
 
         # Frame output
         self.output_frame = customtkinter.CTkScrollableFrame(self.master, width=500, height= 800)
         self.output_frame.pack(side='right', padx=100)
+<<<<<<< HEAD
         self.select_file_path = tk.Label(self.output_frame, text="選擇檔案輸出路徑")
         title_label = tk.Label(self.output_frame, text="Output", font="Helvetica 18 bold", padx=10)
         title_label.pack(side="top", anchor="w")
 
 
 
+=======
+        title_label = tk.Label(self.output_frame, text="Output", font="Helvetica 18 bold", padx=10)
+        title_label.pack(side="top", anchor="w")
+
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
         # Back to LiveTransForM
         self.back = tk.Button(self.master, text="Back", command=self.switch_to_livetransform_frame)
         self.back.place(x=0, y=0)
@@ -336,9 +354,12 @@ class Single_mutation(tk.Frame,Genlig):
         print("After opening file dialog")
         self.xyz_file_path = filepath
 
+<<<<<<< HEAD
     def get_result_path(self):
         result_path = self.path_entry.get()
 
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
     def get_metal(self):
         metal_input = self.metal_entry.get()
 
@@ -402,7 +423,10 @@ class Single_mutation(tk.Frame,Genlig):
             button.pack()
             label.pack()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
     def button_clicked(self, idx, idx_dict, ligand_images):
         if 0 <= idx < len(idx_dict) and 0 <= idx < len(ligand_images):
             self.selected_smiles = idx_dict[idx]
@@ -418,7 +442,10 @@ class Single_mutation(tk.Frame,Genlig):
         self.selected_smiles = None
         self.selected_number = None
         self.diagram_to_button(ligand_images, idx_dict)
+<<<<<<< HEAD
         path = self.path_entry.get()
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
         #print(f"Using selected SMILES in perform_single_mutation: {self.selected_smiles}")
 
     def Interpolation_point(self):
@@ -429,11 +456,15 @@ class Single_mutation(tk.Frame,Genlig):
     def Single_mutation(self, ligand_choose=None, idx=None, SS=False, scs_limit=None, step_size=0.01, step_size_limit=0, max_step_size_limit=100):
         SS_change = False
         metal = self.metal_entry.get()
+<<<<<<< HEAD
         filepath = self.path_entry.get()
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
         xyz_file = self.xyz_file_path
         ligand_images, idx_dict, axial_equ_pair, denticity_dict = self.Choose_ligands_from_xyz(xyz_file, metal)
         choice = self.selected_number
         selected_ligand = self.selected_smiles
+<<<<<<< HEAD
         # for img in self.output_images:
         #     img.destroy()
         # self.output_images = []
@@ -441,6 +472,9 @@ class Single_mutation(tk.Frame,Genlig):
             label.destroy()
         self.output_labels = []
         result_list = []
+=======
+        self.output_images = []
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
         #print(selected_ligand)
         if selected_ligand:
             step_size_limit = 0
@@ -586,15 +620,19 @@ class Single_mutation(tk.Frame,Genlig):
                             print(e)
                             pass
                 print('Interpolation finished')
+<<<<<<< HEAD
 
                 single_mutation_dir = os.path.join(filepath, f'single_mutation_{xyz_file.split("/")[-1].split(".")[0]}')
                 os.makedirs(single_mutation_dir, exist_ok=True)
 
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
                 for i in mutation_list:
                     smiles,idx = i
                     mol = Chem.MolFromSmiles(smiles)
                     img_data = Draw.MolToImage(mol)
                     ligand_image_tk = ImageTk.PhotoImage(img_data)
+<<<<<<< HEAD
                     dig_label = tk.Label(self.output_frame, image=ligand_image_tk)
                     dig_label.pack()
                     label = tk.Label(self.output_frame, text=f"{smiles}")
@@ -610,6 +648,16 @@ class Single_mutation(tk.Frame,Genlig):
                         f.write("{}, {} \n".format(idx, smiles))    
 
                
+=======
+                    self.output_images.append(ligand_image_tk)   
+                    dig_label = tk.Label(self.output_frame, image=ligand_image_tk)   
+                    label = tk.Label(self.output_frame, text=f"{smiles}")
+                    dig_label.pack()    
+                    label.pack()    
+                    print("Point %s: %s" %(idx,smiles))      
+
+
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
     def switch_to_livetransform_frame(self):
         self.master.destroy()
         root = TkinterDnD.Tk()
@@ -673,6 +721,7 @@ class Seeded_generation(tk.Frame,Genlig):
         self.get_button = tk.Button(self.metal_frame, text="確認", command=self.get_metal)
         self.metal_entry.grid(column=0, row=0)
         self.get_button.grid(column=1, row=0)
+<<<<<<< HEAD
         self.path_entry = tk.Entry(self.seeded_frame, font="Helvetica 14", width=10)
         self.get_path = tk.Button(self.seeded_frame, text="確認", command=self.get_result_path)
         self.path_entry.pack()
@@ -680,6 +729,40 @@ class Seeded_generation(tk.Frame,Genlig):
         self.get_button_start = tk.Button(self.seeded_frame, text="Start", command=self.perform_seeded_generation)
         self.get_button_start.pack(anchor=tk.S)
 
+=======
+        # self.metal_entry.place(relx=0.5, rely=0.81, anchor=tk.CENTER)
+        # self.get_button.place(relx=0.75, rely=0.8, anchor=tk.CENTER)
+        self.get_button_start = tk.Button(self.seeded_frame, text="Start", command=self.perform_seeded_generation)
+        self.get_button_start.pack(anchor=tk.S)
+
+        # #Frame 1
+        # self.seeded_frame = tk.Frame(self.master, pady=10)
+        # self.seeded_frame.pack()
+        # self.create_widgets()
+
+        # Frame metal oxidation
+        # self.metal_frame = tk.Frame(self.master, pady=10, relief="sunken", borderwidth=2)
+        # self.metal_frame.pack() 
+        # self.title = tk.Label(self.metal_frame, text="Metal Oxidation", font="Helvetica 18 bold")
+        # self.title.pack()
+        # self.instruction_label = tk.Label(self.metal_frame, text="""Please assign the metal center oxidation state from the following options:
+        # [Fe2, Fe3, Mn2, Mn3, Co2, Co3]
+        # You can also type 'exit' to quit:""", font="Helvetica 14")
+        # self.instruction_label.pack()
+        # self.metal_entry = tk.Entry(self.metal_frame, font="Helvetica 14", width=10)
+        # self.get_button = tk.Button(self.metal_frame, text="確認", command=self.get_metal)
+        # self.metal_entry.place(relx=0.5, rely=0.81, anchor=tk.CENTER)
+        # self.get_button.place(relx=0.75, rely=0.8, anchor=tk.CENTER)
+        # self.output_label = tk.Label(self.metal_frame, font="Helvetica 14")
+        # self.output_label.pack(pady=10)
+
+        # # Frame start
+        # self.start_frame = tk.Frame(self.master, pady=10)
+        # self.start_frame.pack()
+        # self.get_button = tk.Button(self.master, text="Start", command=self.perform_seeded_generation)
+        # self.get_button.pack()
+
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
         # Frame output
         self.output_frame = customtkinter.CTkScrollableFrame(self.master, width=500, height= 800)
         self.output_frame.pack(side='right', padx=100)
@@ -723,6 +806,7 @@ class Seeded_generation(tk.Frame,Genlig):
     def get_metal(self):
         metal_input = self.metal_entry.get()
 
+<<<<<<< HEAD
     def get_result_path(self):
         result_path = self.path_entry.get()
 
@@ -730,6 +814,11 @@ class Seeded_generation(tk.Frame,Genlig):
         xyz_file = self.xyz_file_path
         metal = self.metal_entry.get()
         filepath = self.path_entry.get()
+=======
+    def Seeded_generation_method(self,xyz_file,metal=False,SS=False,scs_limit=None,step_size=0.01,max_step_size_limit=100):
+        xyz_file = self.xyz_file_path
+        metal = self.metal_entry.get()
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
         SS = None  
         scs_limit = None
         obmol = ob.OBMol()
@@ -843,6 +932,7 @@ class Seeded_generation(tk.Frame,Genlig):
                     self.SS_output_label.config(text=f"SS after mutation is {SS}")
                     print('\nSS after mutation is', SS)
 
+<<<<<<< HEAD
                     with open('{}/seeded_gen_output.csv'.format(filepath), 'w') as f:
                         f.write("idx, original, mutated \n")
                         for idx, (original_lig, mutated_lig) in enumerate(comparsion_ligs):
@@ -850,6 +940,9 @@ class Seeded_generation(tk.Frame,Genlig):
                 
 
 
+=======
+            
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
     def perform_seeded_generation(self):
         xyz_file = self.xyz_file_path
         metal = self.metal_entry.get()
@@ -918,10 +1011,13 @@ class Predict_spin_state(tk.Frame,Genlig):
         self.get_button.grid(column=1, row=0)
         # self.metal_entry.place(relx=0.5, rely=0.81, anchor=tk.CENTER)
         # self.get_button.place(relx=0.75, rely=0.8, anchor=tk.CENTER)
+<<<<<<< HEAD
         self.path_entry = tk.Entry(self.predict_frame, font="Helvetica 14", width=10)
         self.get_path = tk.Button(self.predict_frame, text="確認", command=self.get_result_path)
         self.path_entry.pack()
         self.get_path.pack()
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
         self.get_button_start = tk.Button(self.predict_frame, text="Start", command=self.perform_pred_SS)
         self.get_button_start.pack(anchor=tk.S)
 
@@ -950,9 +1046,12 @@ class Predict_spin_state(tk.Frame,Genlig):
         #self.select_file.grid(row=3, column=0, pady=10)
         self.select_file.pack()
 
+<<<<<<< HEAD
     def get_result_path(self):
         result_path = self.path_entry.get()
 
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
     def drop(self, event):
         filepath = event.data
         filepath = filepath.strip('{}')
@@ -974,7 +1073,10 @@ class Predict_spin_state(tk.Frame,Genlig):
         obConversion = ob.OBConversion()
         obConversion.SetInFormat("xyz")
         obConversion.ReadFile(obmol, xyz_file)
+<<<<<<< HEAD
         filepath = self.path_entry.get()
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
         metal_atom_count = 0
         spin_state_prediction = set()
         if len(obmol.Separate()) == 1:
@@ -1001,9 +1103,12 @@ class Predict_spin_state(tk.Frame,Genlig):
                     output_label = tk.Label(self.output_frame, text=f"The model predict SS is {spin_state}")
                     output_label.pack()
                     print('The model predict SS is %s' %spin_state)
+<<<<<<< HEAD
                     with open('{}/SS_output.csv'.format(filepath), 'w') as f:
                         f.write("SS \n")
                         f.write("{} \n".format(spin_state))
+=======
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
         else:
             output_label = tk.Label(self.output_frame_frame, text="Structure might not be octahedral")
             output_label.pack()
@@ -1023,4 +1128,8 @@ class Predict_spin_state(tk.Frame,Genlig):
 if __name__ == "__main__":
     root = TkinterDnD.Tk()
     app_live_trans = LiveTransForM(root)
+<<<<<<< HEAD
     root.mainloop()
+=======
+    root.mainloop()
+>>>>>>> 2323ba1f5f533ea8c7515bf91d0f79fa0665ae2b
